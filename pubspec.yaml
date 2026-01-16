@@ -1,0 +1,75 @@
+name: ovopayagent
+description: "Complete Cross Platform MFS Solution"
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  cached_network_image: 
+  cupertino_icons: 
+  device_info_plus: 
+  dio: 
+  dots_indicator: 
+  file_picker: 
+  firebase_core: 
+  firebase_messaging: 
+  flutter:
+    sdk: flutter
+  flutter_inappwebview: 
+  flutter_local_notifications: 
+  flutter_screenutil: 
+  flutter_secure_storage: 
+  flutter_spinkit: 
+  flutter_svg: 
+  flutter_widget_from_html: 
+  get: 
+  image_picker: 
+  intl: 
+  local_auth: ^2.3.0 
+  logger: 
+  lottie: 
+  mobile_scanner: 
+  open_file: 
+  path_provider: 
+  permission_handler: 
+  pin_code_fields: 
+  profile_image_cropper: 
+  shared_preferences: 
+  shimmer: 
+  skeletonizer: 
+  timezone: 
+  toastification: 
+  url_launcher: 
+dependency_overrides:
+  intl: 0.20.2
+dev_dependencies:
+  flutter_lints: 
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/icons/actions/
+    - assets/images/onboard/
+    - assets/images/logo/
+    - assets/animation/
+    - assets/fonts/
+
+  fonts:
+    - family: AlbertSans
+      fonts:
+        - asset: assets/fonts/Albert_Sans/AlbertSans-Regular.ttf
+        - asset: assets/fonts/Albert_Sans/AlbertSans-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Albert_Sans/AlbertSans-Italic.ttf
+          style: italic
+        - asset: assets/fonts/Albert_Sans/AlbertSans-Light.ttf
+          weight: 300

@@ -1,0 +1,22 @@
+{
+    "flutter": {
+        "platforms": {
+            "android": {
+                "default": {
+                    "projectId": "ovopay-app",
+                    "appId": "1:364630175808:android:b29c6a19ace48d2a786fa5",
+                    "fileOutput": "android/app/google-services.json"
+                }
+            },
+            "dart": {
+                "lib/firebase_options.dart": {
+                    "projectId": "ovopay-app",
+                    "configurations": {
+                        "android": "1:364630175808:android:b29c6a19ace48d2a786fa5",
+                        "ios": "1:364630175808:ios:c7027fcbf44b76c7786fa5"
+                    }
+                }
+            }
+        }
+    }
+}
