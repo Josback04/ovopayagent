@@ -29,7 +29,7 @@ dependencies:
   get: 
   image_picker: 
   intl: 
-  local_auth: ^2.3.0 
+  local_auth: 
   logger: 
   lottie: 
   mobile_scanner: 
@@ -45,7 +45,7 @@ dependencies:
   toastification: 
   url_launcher: 
 dependency_overrides:
-  intl: 0.20.2
+  intl: 
 dev_dependencies:
   flutter_lints: 
   flutter_test:

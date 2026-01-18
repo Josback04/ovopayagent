@@ -7,6 +7,7 @@ import 'package:ovopayagent/app/components/snack_bar/show_custom_snackbar.dart';
 import 'package:ovopayagent/core/data/models/profile/profile_response_model.dart';
 import 'package:ovopayagent/core/data/repositories/biometric/biometric_repo.dart';
 import 'package:ovopayagent/core/data/services/shared_pref_service.dart';
+import 'package:local_auth/error_codes.dart' as auth_error;
 import '../../../../../core/utils/util_exporter.dart';
 
 class BioMetricController extends GetxController {
@@ -114,26 +115,27 @@ class BioMetricController extends GetxController {
         localizedReason: fromLogin
             ? 'Please provide your device pin to login'
             : 'Please authenticate to enable biometrics',
-        // biometricOnly: true,
-        // persistAcrossBackgrounding: true,
+        // options: const AuthenticationOptions(biometricOnly: true), // Note: biometricOnly est maintenant dans AuthenticationOptions
       );
-    } on LocalAuthException catch (e) {
-      if (e.code == LocalAuthExceptionCode.noBiometricHardware) {
+    } on PlatformException catch (e) {
+      // MODIFICATION ICI : Utiliser PlatformException
+      if (e.code == auth_error.notAvailable) {
+        // MODIFICATION ICI : Code standard
         CustomSnackBar.error(errorList: ["Biometrics is not available"]);
         return false;
-      } else if (e.code == LocalAuthExceptionCode.noBiometricsEnrolled) {
+      } else if (e.code == auth_error.notEnrolled) {
+        // MODIFICATION ICI : Code standard
         CustomSnackBar.error(errorList: ["Biometrics is not enrolled"]);
         return false;
       } else {
+        // Autres erreurs (ex: lockedOut, etc.)
         return false;
       }
     } catch (e) {
       printE('Authentication error: $e');
       return false;
     }
-  }
-
-  //Delete account
+  } //Delete account
 
   TextEditingController pinCodeController = TextEditingController();
   bool isShowBioMetricAccountPinBox = false;
